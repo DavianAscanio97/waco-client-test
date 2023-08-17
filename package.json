@@ -3,9 +3,9 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
+    "start": "node --max_old_space_size=4096 node_modules/@angular/cli/bin/ng serve --disable-host-check --poll=2000 --source-map=false",
+    "build": "node --max_old_space_size=16000 --stack-size=16000 node_modules/@angular/cli/bin/ng build --prod=true --build-optimizer --vendor-chunk",
     "dev": "node --max_old_space_size=8048 ./node_modules/@angular/cli/bin/ng serve --configuration=development",
-    "start": "node --max_old_space_size=8048 ./node_modules/@angular/cli/bin/ng serve --configuration=development",
-    "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "prod": "npm run production",
     "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --progress",
