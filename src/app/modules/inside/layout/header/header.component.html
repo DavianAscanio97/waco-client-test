@@ -1,0 +1,32 @@
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark mb-5 ">
+  <div class="container-fluid">
+     <a class="navbar-brand" href="#">
+      <img src="https://github.com/devemdobro/projeto-listagem-pokemon/blob/main/src/imagens/pokeball.png?raw=true" alt="" width="30" height="30">
+    </a>
+    <a class="navbar-brand" routerLink="/">WACO POKEMON</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mynavbar">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/me/users">Usuarios Registrados</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" target="_blank" href="{{apiDocs}}">Documentación de APIS</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" target="_blank" href="https://github.com/DavianAscanio97">GITHUB</a>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <span class="navbar-text text-white mx-2 ">
+          <span class="badge bg-pokemon-red">{{username}}</span>
+        </span>
+        <button class="btn btn-primary" (click)="logout()" type="button">Salir</button>
+      </form>
+    </div>
+  </div>
+</nav>
+

@@ -1,0 +1,48 @@
+<div class="login-container">
+  <div class="logo-container vertical-center text-center ">
+    <label>
+      <h5 class="text-white">DAVIAN ASCANIO | WACO</h5>
+      <h1 class="changing text-white">Atrapa un Pokémon ¡Encuentra a tú compañero!</h1>
+    </label>
+  </div>
+  <div class=" vertical-center text-center bg-pokemon-red">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-10 col-md-10 col-lg-6 offset-md-1 offset-lg-3">
+          <form  [formGroup]="form" (ngSubmit)="createUser()">
+            <img class="mb-4" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/2560px-International_Pok%C3%A9mon_logo.svg.png" width="200">
+            <h1 class="h3 mb-3 fw-normal">Registrarse</h1>
+            <div class="form-floating mt-2">
+              <input type="text" class="form-control" formControlName="username" id="floatingInput" placeholder="name@example.com">
+              <label for="floatingInput">Nombre de usuario</label>
+            </div>
+            <div *ngIf="f.username.touched && f.username.invalid" class="text-white text-start">
+              <div *ngIf="f.username.errors.required">Nombre es requerido</div>
+            </div>
+            <div class="form-floating mt-2">
+              <input type="email" class="form-control" formControlName="email" id="floatingInput" placeholder="name@example.com">
+              <label for="floatingInput">Correo electronico</label>
+            </div>
+            <div *ngIf="f.email.touched && f.email.invalid" class="text-white text-start">
+              <div *ngIf="f.email.errors.required">Correo es requerido</div>
+            </div>
+            <div *ngIf="f.email.touched && f.email.invalid" class="text-white text-start">
+              <div *ngIf="f.email.errors.email">Correo invalido</div>
+            </div>
+            <div class="form-floating  mt-2">
+              <input type="password" class="form-control" formControlName="password" id="floatingPassword" placeholder="Password">
+              <label for="floatingPassword">Contraseña</label>
+            </div>
+            <div *ngIf="f.password.touched && f.password.invalid" class="text-white text-start">
+              <div *ngIf="f.password.errors.required">Contraseña es requerido</div>
+            </div>
+            <button class="w-100 btn btn-lg btn-primary mt-2" type="submit">Crear Cuenta</button>
+            <p class="mt-2 mb-3 text-muted text-white">
+              <a id="forgot-password  text-white" routerLink="/login">Iniciar sesión</a>
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

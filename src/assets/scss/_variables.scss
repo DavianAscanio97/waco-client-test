@@ -1,0 +1,62 @@
+$primary-transparent: rgb(15, 34, 74);
+$secondary-transparent: rgba(0, 0, 0, 0.92);
+$sw-color-primary-hex: rgb(15, 34, 74);
+$sw-color-secondary-hex: #000000;
+$sw-color-primary-rgb: '233, 13, 59';
+$sw-color-secondary-rgb: '0, 0, 0';
+$primary: $sw-color-primary-hex;
+$secondary: $sw-color-secondary-hex;
+$success: $primary;
+$info: $primary;
+$warning: #eb710d;
+$danger: $primary;
+$light: #FFFF;
+$dark: #0E0B29;
+$white: #F9F9F9;
+$theme-text: #F9F9F9;
+$body-bg: #EDEEF0;
+$body-color: #0E0B29;
+$card-bg: #FFFFFF;
+$form-check-input-checked-bg-color: $sw-color-primary-hex;
+$form-check-input-focus-box-shadow: none;
+$form-check-input-checked-border-color:$sw-color-primary-hex;
+$form-check-input-checked-bg-color: $sw-color-primary-hex;
+$input-border-color:#ced4da;
+$input-focus-border-color: #bfc0c2;
+
+$theme-colors: ("primary": $primary,
+  "secondary": $secondary,
+  "success": $success,
+  "info": $info,
+  "warning": $warning,
+  "danger": $danger,
+  "light": $light,
+  "dark": $dark);
+
+:root {
+  // Theme colors Light
+  --input-background-color: #EDEEF0;
+  --input-focus-border-color: #bfc0c2;
+}
+
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+* {
+  scrollbar-width: auto;
+  scrollbar-color: #858585 #ffffff;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 13px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #858585;
+  border-radius: 10px;
+  border: 3px solid #ffffff;
+}

@@ -1,0 +1,26 @@
+
+    <div class="modal-header">
+       <h4>Información del usuario</h4>
+    </div>
+    <div class="modal-body pt-1" >
+       <form [formGroup]="form" (ngSubmit)="updateUser()">
+      <div class="mb-3">
+        <label for="nombre" class="form-label">Nombre</label>
+        <input type="text" class="form-control" id="nombre" name="nombre" formControlName="username" placeholder="Ingrese su nombre">
+      </div>
+      <div class="mb-3">
+        <label for="correo" class="form-label">Correo</label>
+        <input type="email" class="form-control" id="correo" name="correo" formControlName="email" placeholder="Ingrese su correo electrónico">
+      </div>
+      <div class="mb-3">
+        <label for="fechaNacimiento" class="form-label">Fecha de Nacimiento</label>
+        <input type="date" class="form-control" id="fechaNacimiento" formControlName="birthdate" name="fechaNacimiento">
+      </div>
+      <div class="mb-3">
+        <label for="ciudad" class="form-label">Ciudad</label>
+        <input type="text" class="form-control" id="ciudad" name="ciudad" formControlName="city" placeholder="Ingrese su ciudad">
+      </div>
+      <button type="submit" class="btn btn-primary mx-2">Actualizar usuario</button>
+      <button type="button" class="btn btn-warning float-end" (click)="cerrarModal()">Cerrar</button>
+    </form>
+    </div>

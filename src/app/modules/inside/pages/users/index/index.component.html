@@ -1,0 +1,49 @@
+  <ng-template #customLoadingTemplate>
+    <div class="custom-class">
+    </div>
+  </ng-template>
+  <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '3px' }" [template]="customLoadingTemplate">
+  </ngx-loading>
+
+  <div class="container mb-3">
+    <div class="m-3">
+      <form>
+        <div class="form-group form-inline mb-3">
+          Buscar por Nombre de usuario:
+          <input class="form-control ml-2" type="text" name="searchTerm" [(ngModel)]="searchTerm"
+          placeholder="Ingrese el nombre del usuario"
+            (input)="search($event)" />
+        </div>
+      </form>
+      <div class="table-responsive">
+        <table class="table table-striped e">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col" sortable="name">Nombre</th>
+            <th scope="col" sortable="area">Correo</th>
+            <th scope="col" class="float-end" sortable="area">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            *ngFor="let user of users | listFilter: searchTerm | slice: (page-1) * pageSize : page * pageSize; index as i">
+            <th scope="row">{{ (page -1) * pageSize + i + 1 }}</th>
+            <td>
+              {{ user.username }}
+            </td>
+            <td>{{ user.email}}</td>
+            <td >
+              <button class="btn btn-danger btn-sm mx-2 float-end" (click)="deleteUser(user._id)"> Eliminar</button>
+              <button class="btn btn-info  btn-sm  mx-2 float-end" (click)="updateUserModal(user._id)"> Editar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+
+      <ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [maxSize]="5" [boundaryLinks]="true"
+        [pageSize]="pageSize" class="d-flex justify-content-center"></ngb-pagination>
+    </div>
+
+  </div>

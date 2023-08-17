@@ -1,0 +1,77 @@
+ul.list-pokemon {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+li.card-pokemon {
+  background-color: #dedbdb;
+  width: 250px;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 15px;
+  border-radius: 15px;
+  transition: 0.2s ease-in-out;
+}
+
+li.card-pokemon:hover {
+  background-color: #e5e5e5;
+  transform: scale(1.05);
+}
+
+li.card-pokemon .gif {
+  width: 80px;
+  height: 80px;
+}
+
+.tema-dark li.card-pokemon {
+  background-color: #a8a8a8;
+}
+
+li.card-pokemon .infos {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid #333333;
+  border-radius: 10px;
+}
+
+li.card-pokemon .infos span {
+  text-transform: uppercase;
+  font-size: 14px;
+  padding: 5px;
+}
+
+li.card-pokemon .types {
+  display: flex;
+  gap: 15px;
+}
+
+li.card-pokemon .type {
+  padding: 10px;
+  border-radius: 10px;
+}
+
+main .description {
+  max-height: 80px;
+  overflow-y: scroll;
+  font-size: 14px;
+  padding-right: 10px;
+}
+
+*::-webkit-scrollbar {
+  width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: #f1e9e9;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #582965;
+  border-radius: 10px;
+  border: 3px solid #ffffff;
+}

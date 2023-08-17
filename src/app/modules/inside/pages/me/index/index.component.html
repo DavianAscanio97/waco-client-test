@@ -1,0 +1,31 @@
+  <ng-template #customLoadingTemplate>
+    <div class="custom-class">
+    </div>
+  </ng-template>
+  <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '3px' }" [template]="customLoadingTemplate">
+  </ngx-loading>
+
+  <div class="container mb-3">
+    <div class="row mb-3">
+      Buscar Pokémon:
+      <input type="text" class="form-control " [(ngModel)]="searchTerm" placeholder="Ingrese el nombre del pokemon"
+        (input)="filterPokemons()">
+    </div>
+    <div class="row">
+      <ul class="list-pokemon">
+        <li *ngFor="let item of filteredPokemons; let i = index" class="card-pokemon">
+          <div class="infos">
+            <span>{{ item.name }}</span>
+            <span>#{{ i+1 }}</span>
+          </div>
+          <img src="{{ item.image }}" alt="{{ item.name }}" class="gif">
+          <button *ngIf="!item.isFavorite" (click)="changeFavorite('add', item)" class="type bg-warning ">Agregar
+            Favorito</button>
+          <button *ngIf="item.isFavorite" (click)="changeFavorite('remove', item)"
+            class="type bg-danger text-white ">Quitar
+            de Favorito</button>
+          <p class="description">{{ item.description }}</p>
+        </li>
+      </ul>
+    </div>
+  </div>
