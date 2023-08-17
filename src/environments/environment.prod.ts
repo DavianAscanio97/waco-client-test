@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiBaseUrl: 'https://tu-backend-produccion.com',
+  apiBaseUrl: 'https://waco-api-test-production.up.railway.app',
 };
